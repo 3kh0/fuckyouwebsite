@@ -1,0 +1,3 @@
+- put everything on fire
+- add michenal transactions
+- change logo for another logo Mc Donalds-> BurgerKing

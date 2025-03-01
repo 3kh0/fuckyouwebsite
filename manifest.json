@@ -1,0 +1,12 @@
+{
+  "name": "Gambling Browser",
+  "description": "50/50 chance that your website will be unuseable",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": ["tabs", "proxy", "history", "webNavigation", "activeTab", "notifications", "scripting"],
+  "host_permissions": ["*://*/*"],
+
+  "background": {
+    "service_worker": "./src/background.js"
+  }
+}

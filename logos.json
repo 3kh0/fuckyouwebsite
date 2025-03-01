@@ -1,0 +1,105 @@
+{
+    "companies": [
+      {
+        "name": "McDonald's",
+        "domain": "mcdonalds.com",
+        "competitors": [
+          {
+            "name": "Burger King",
+            "domain": "bk.com"
+          }
+        ]
+      },
+      {
+        "name": "Coca-Cola",
+        "domain": "coca-cola.com",
+        "competitors": [
+          {
+            "name": "Pepsi",
+            "domain": "pepsi.com"
+          }
+        ]
+      },
+      {
+        "name": "Apple",
+        "domain": "apple.com",
+        "competitors": [
+          {
+            "name": "Samsung",
+            "domain": "samsung.com"
+          }
+        ]
+      },
+      {
+        "name": "Tesla",
+        "domain": "tesla.com",
+        "competitors": [
+          {
+            "name": "Ford",
+            "domain": "ford.com"
+          }
+        ]
+      },
+      {
+        "name": "Amazon",
+        "domain": "amazon.com",
+        "competitors": [
+          {
+            "name": "Walmart",
+            "domain": "walmart.com"
+          }
+        ]
+      },
+      {
+        "name": "Microsoft",
+        "domain": "microsoft.com",
+        "competitors": [
+          {
+            "name": "Google",
+            "domain": "google.com"
+          }
+        ]
+      },
+      {
+        "name": "Nike",
+        "domain": "nike.com",
+        "competitors": [
+          {
+            "name": "Adidas",
+            "domain": "adidas.com"
+          }
+        ]
+      },
+      {
+        "name": "Netflix",
+        "domain": "netflix.com",
+        "competitors": [
+          {
+            "name": "Disney+",
+            "domain": "disneyplus.com"
+          }
+        ]
+      },
+      {
+        "name": "Boeing",
+        "domain": "boeing.com",
+        "competitors": [
+          {
+            "name": "Airbus",
+            "domain": "airbus.com"
+          }
+        ]
+      },
+      {
+        "name": "Facebook",
+        "domain": "facebook.com",
+        "competitors": [
+          {
+            "name": "TikTok",
+            "domain": "tiktok.com"
+          }
+        ]
+      }
+    ]
+  }
+  
