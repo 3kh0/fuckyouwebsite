@@ -26,7 +26,7 @@ function showPaywall() {
   document.body.appendChild(paywall);
 
   document.getElementById("payButton").addEventListener("click", () => {
-    const iframe = document.createElement("iframe");
+   /* const iframe = document.createElement("iframe");
     iframe.src = chrome.runtime.getURL("views/payment.html");
     iframe.style.cssText = `
       position: fixed;
@@ -38,15 +38,16 @@ function showPaywall() {
       border: none;
       z-index: 10000;
     `;
-    document.body.appendChild(iframe);
+    document.body.appendChild(iframe);*/
+    paywall.remove();
   });
 
-  setInterval(() => {
+  /*setInterval(() => {
     if (!document.getElementById("paywall")) {
       alert("You tried to delete it :(");
       showPaywall();
     }
-  }, 250);
+  }, 250);*/
 }
 
 showPaywall();
