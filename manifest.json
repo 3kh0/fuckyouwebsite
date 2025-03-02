@@ -5,7 +5,12 @@
   "manifest_version": 3,
   "permissions": ["tabs", "proxy", "history", "webNavigation", "activeTab", "notifications", "scripting"],
   "host_permissions": ["*://*/*"],
-
+  "web_accessible_resources": [
+    {
+      "resources": ["*"],
+      "matches": ["<all_urls>"]
+    }
+  ],
   "background": {
     "service_worker": "./src/background.js"
   }

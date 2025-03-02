@@ -7,8 +7,11 @@ const site = `<html><body><center>
 
 <h1>무료 검색이 감지되었습니다</h1>
 <p>위대한 군주들의 통치 하에서: 김정은 당신은 이 사이트를 사용할 수 없으며 학습 캠프에 예약되어 있습니다.</p>
+<button>나는 김정은을 사랑한다</button>
 <img src="https://cdn.saahild.com/u/taQbMa.gif" />
 </body></center></html>`;
+
+window.$$pledge;
 
 document.open();
 document.write(site);
