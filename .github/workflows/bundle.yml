@@ -24,7 +24,7 @@ jobs:
           cp fuckyouwebsite.zip fuckyouwebsite.crx
 
       - name: upload crx
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: fuckyouwebsite-extension
           path: |
