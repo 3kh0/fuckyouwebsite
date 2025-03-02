@@ -1,0 +1,5 @@
+- Fix soul popup
+- Fix logo replacing
+- Fix we need money popup
+- Add Payment
+- Fix error when loading Google.com

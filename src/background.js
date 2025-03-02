@@ -24,6 +24,7 @@ const scripts = ["src/punish/paywallSite.js", "src/punish/popup.js", "src/punish
 
 function getRandomScript() {
   const randomIndex = Math.floor(Math.random() * scripts.length);
+  console.log(scripts[randomIndex]);
   return scripts[randomIndex];
 }
 
@@ -66,14 +67,14 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
     // valid?
     let coinflip = Math.floor(Math.random() * 2);
 
-    if (coinflip === 1) {
+    //if (coinflip === 1) {
       if (!tab.url.startsWith("chrome://") && !tab.url.startsWith("about:")) {
         chrome.scripting.executeScript({
           target: { tabId: tabId },
           files: [getRandomScript()],
         });
       }
-    }
+   //}
   }
 });
 
