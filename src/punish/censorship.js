@@ -7,11 +7,35 @@ const site = `<html><body><center>
 
 <h1>무료 검색이 감지되었습니다</h1>
 <p>위대한 군주들의 통치 하에서: 김정은 당신은 이 사이트를 사용할 수 없으며 학습 캠프에 예약되어 있습니다.</p>
-<button>나는 김정은을 사랑한다</button>
+<button id="censor-verify" onclick="window.$$pledge()">나는 김정은을 사랑한다</button>
 <img src="https://cdn.saahild.com/u/taQbMa.gif" />
-</body></center></html>`;
+</body></center></html>
+<!-- i am not north korean captcha style box -->
+<div style="display: inline-block; border: 2px solid #ccc; border-radius: 5px; padding: 1rem; background-color: #f9f9f9; box-shadow: 0 2px 5px rgba(0,0,0,0.1); width: 300px;">
+  <div style="border-bottom: 1px solid #ddd; padding-bottom: 0.5rem; margin-bottom: 1rem;">
+    <span style="font-size: 1.2rem; font-weight: bold;">확인</span>
+  </div>
+  <div style="display: flex; align-items: center;">
+    <input type="checkbox" id="notNorthKorean" style="margin-right: 1rem; width: 20px; height: 20px;">
+    <label for="notNorthKorean" style="font-size: 1.5rem;">나는 북한인이 아닙니다.</label>
+  </div>
+</div>
 
-window.$$pledge;
 
+`;
+// const div = document.createElement("div");
+// const imgsDiv = document.createElement("div");
+// imgsDiv.innerHTML = ``;
+// sign off
 document.open();
 document.write(site);
+document.close();
+
+document.querySelector("#censor-verify").onclick = () => {
+  location.reload();
+  // store not koren status in local storage for 5 minutes
+  localStorage.setItem("notKorean", true);
+  setTimeout(() => {
+    localStorage.removeItem("notKorean");
+  }, 5 * 60 * 1000);
+};
