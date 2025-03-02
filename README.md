@@ -1,3 +1,4 @@
+![example](./images/example.png)
 # Fuck You Website
 
 Browsing the web has become way too easy! So we set out to fix this and make it much more complicated.
