@@ -50,8 +50,3 @@ function showPaywall() {
 }
 
 showPaywall();
-
-// https://commerce.coinbase.com/checkout/f574d05b-6b3e-40b2-aa24-2acb75613270
-// pk_test_51QRPk8DwtWbetrx5qu9Rxz4oA0Yoa0DedeWWXkU7JvucLKY5gktoDyQHhqaOg8B30JjXq15vtsSfQjK4MCqDAdsN00Ldvop9tN
-// sk_test_51QRPk8DwtWbetrx5nfBYGJl2ME2Q5avXyOSKWKHI4LCoKoVFc9QcmPlBJmPkDnlOl8gPTWwJ9EYlxjWd0SdCvtSE0059NUS4uE
-// prod_Rrjw0rKdiZ2v3I
