@@ -91,7 +91,7 @@ const site = `
           <img src="${chrome.runtime.getURL("images/kpcap.png")}" width="20" height="20" alt="kpCAPTCHA l" />
         </div>
         <div class="ca-tick">
-          <input type="checkbox" id="notKP" class="tickbox" />
+          <input type="checkbox" id="notKP" class="tickbox" onclick="location.reload()" />
           <label for="notKP">I am not North Korean</label>
         </div>
       </div>
