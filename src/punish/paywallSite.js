@@ -15,9 +15,9 @@ function showPaywall() {
   paywall.style.flexDirection = "column";
   paywall.style.justifyContent = "center";
   paywall.style.alignItems = "center";
-  paywall.style.zIndex = "9999";
+  paywall.style.zIndex = "9999999";
   paywall.innerHTML = `
-      <img height="300" width="300" src="https://rawr.hackclub.com/dinosaur_sealing_letters_with_wax.png"/>
+      <img height="300" width="300" src="${chrome.runtime.getURL("images/dino_stamp.png")}"/>
       <h1 style="font-size: 3em; margin-top: 1rem;">We need money</h1>
       <p style="font-size: 1.5em;">Please pay $5 to continue.</p>
       <button id="payButton" style="padding: 10px 20px; font-size: 1.5em; cursor: pointer;">Pay Now</button>
