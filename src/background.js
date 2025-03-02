@@ -20,7 +20,7 @@ function checktabs() {
 
 chrome.tabs.onCreated.addListener(checktabs);
 
-const scripts = ["src/punish/paywallSite.js", "src/punish/popup.js", "src/punish/censorship.js", "src/punish/chinese.js"];
+const scripts = ["src/punish/paywallSite.js", "src/punish/popup.js", "src/punish/censorship.js", "src/punish/chinese.js", "src/punish/colorize.js"];
 
 function getRandomScript() {
   const randomIndex = Math.floor(Math.random() * scripts.length);
@@ -30,20 +30,15 @@ function getRandomScript() {
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
   if (changeInfo.status === "complete" && tab.url) {
     // valid?
-    if (!tab.url.startsWith("chrome://") && !tab.url.startsWith("about:")) {
-      chrome.scripting.executeScript(
-        {
+    let coinflip = Math.floor(Math.random() * 2);
+
+    if (coinflip === 1) {
+      if (!tab.url.startsWith("chrome://") && !tab.url.startsWith("about:")) {
+        chrome.scripting.executeScript({
           target: { tabId: tabId },
           files: [getRandomScript()],
-        },
-        (results) => {
-          if (chrome.runtime.lastError) {
-            console.error("it broke ", chrome.runtime.lastError.message);
-          } else {
-            console.log("we ball");
-          }
-        }
-      );
+        });
+      }
     }
   }
 });
