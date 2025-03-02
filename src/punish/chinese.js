@@ -1,4 +1,5 @@
 function loadCustomFont(fontName, fontUrl) {
+  console.log("hiiiiii");
   const font = new FontFace(fontName, `url(${fontUrl})`);
   font
     .load()
@@ -14,4 +15,5 @@ function loadCustomFont(fontName, fontUrl) {
     });
 }
 
-loadCustomFont("MyCustomFont", "chinese.ttf");
+const extensionUrl = chrome.runtime.getURL("fonts/ex-kata1.ttf");
+loadCustomFont("MyCustomFont", extensionUrl);
