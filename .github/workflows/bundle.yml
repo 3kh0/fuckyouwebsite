@@ -1,0 +1,40 @@
+name: Build Chrome Extension
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: stage files
+        run: |
+          mkdir -p extension
+          find . -mindepth 1 -maxdepth 2 -not -path "./.git" -not -path "./.github" -not -path "./extension" -exec cp -r {} extension/ \;
+
+      - name: create zip
+        run: |
+          cd extension
+          zip -r ../fuckyouwebsite.zip *
+          cp fuckyouwebsite.zip fuckyouwebsite.crx
+
+      - name: upload crx
+        uses: actions/upload-artifact@v3
+        with:
+          name: fuckyouwebsite-extension
+          path: |
+            fuckyouwebsite.crx
+
+      - name: create release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            fuckyouwebsite.crx
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
