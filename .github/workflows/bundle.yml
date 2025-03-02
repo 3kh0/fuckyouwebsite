@@ -1,0 +1,40 @@
+name: build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: stage files
+        run: |
+          mkdir -p extension
+          find . -maxdepth 1 -type f -not -path "./.*" -exec cp {} extension/ \;
+          mkdir -p extension/fonts extension/images extension/src extension/views
+          cp -r fonts/* extension/fonts/ 2>/dev/null || :
+          cp -r images/* extension/images/ 2>/dev/null || :
+          cp -r src/* extension/src/ 2>/dev/null || :
+          cp -r views/* extension/views/ 2>/dev/null || :
+
+      - name: create zip
+        run: |
+          cd extension
+          zip -r ../fuckyouwebsite.zip *
+          cd ..
+          cp fuckyouwebsite.zip fuckyouwebsite.crx
+
+      - name: upload crx
+        uses: actions/upload-artifact@v4
+        with:
+          name: fuckyouwebsite.crx
+          path: |
+            fuckyouwebsite.crx

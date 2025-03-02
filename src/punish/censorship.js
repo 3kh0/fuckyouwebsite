@@ -8,6 +8,9 @@ const site = `
       body {
         font-family: Arial, sans-serif;
         padding: 20px;
+        margin: 0;
+        background-color: #f9f9f9;
+        color: #000;
       }
       .p {
         width: 600px;
@@ -16,6 +19,7 @@ const site = `
         box-shadow: 5px 5px 10px #888888;
         padding: 15px;
         margin: 0 auto;
+        color: #000;
       }
       .h {
         display: flex;
@@ -104,9 +108,9 @@ document.open();
 document.write(site);
 document.close();
 
-document.addEventListener('DOMContentLoaded', (event) => {
-  document.getElementById('notKP').addEventListener('click', handleClick);
-  console.log(document.getElementById('notKP'));
+document.addEventListener("DOMContentLoaded", (event) => {
+  document.getElementById("notKP").addEventListener("click", handleClick);
+  console.log(document.getElementById("notKP"));
 });
 
 function handleClick() {
