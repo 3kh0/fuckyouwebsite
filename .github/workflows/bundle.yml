@@ -38,17 +38,3 @@ jobs:
           name: fuckyouwebsite.crx
           path: |
             fuckyouwebsite.crx
-
-      - name: make version
-        id: version
-        run: echo ::set-output name=version::$(date +'%Y%m%d%H%M%S')
-
-      - name: release
-        uses: actions/create-release@v1
-        id: create_release
-        with:
-          draft: false
-          prerelease: false
-          release_name: ${{ steps.version.outputs.version }}
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
