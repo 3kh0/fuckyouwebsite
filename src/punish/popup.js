@@ -64,6 +64,15 @@ const popups = [
     a.append(img);
     div.append(img);
   },
+  (div) => {
+    // docume
+    const img = ``;
+
+    const imgElement = document.createElement("img");
+    imgElement.src = chrome.runtime.getURL("images/gamba.png");
+
+    div.append(imgElement);
+  },
 ];
 async function createPopup(posX, posY) {
   const sPopup = popups[Math.floor(Math.random() * popups.length)];
