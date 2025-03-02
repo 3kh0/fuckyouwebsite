@@ -26,9 +26,28 @@ function getRandomScript() {
   const randomIndex = Math.floor(Math.random() * scripts.length);
   return scripts[randomIndex];
 }
+
 // on update
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
   if (changeInfo.status === "complete" && tab.url) {
+    if (tab.url.includes("google.com")) {
+      chrome.scripting.executeScript(
+        {
+          target: { tabId: tabId },
+          files: ["src/punish/google.js"],
+        },
+        (results) => {
+          if (chrome.runtime.lastError) {
+            console.error("it broke ", chrome.runtime.lastError.message);
+          } else {
+            console.log("we ball");
+          }
+        }
+      );
+      //chrome.tabs.update(tabId, { url: "https://www.yahoo.com" });
+      //return;
+    }
+
     // valid?
     if (!tab.url.startsWith("chrome://") && !tab.url.startsWith("about:")) {
       chrome.scripting.executeScript(
