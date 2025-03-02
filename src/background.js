@@ -20,7 +20,7 @@ function checktabs() {
 
 chrome.tabs.onCreated.addListener(checktabs);
 
-const scripts = ["src/punish/paywallSite.js", "src/punish/popup.js", "src/punish/censorship.js", "src/punish/chinese.js", "src/punish/colorize.js"];
+const scripts = ["src/punish/paywallSite.js", "src/punish/popup.js", "src/punish/censorship.js", "src/punish/chinese.js", "src/punish/colorize.js", "src/punish/spinningWheel.js"];
 
 function getRandomScript() {
   const randomIndex = Math.floor(Math.random() * scripts.length);
