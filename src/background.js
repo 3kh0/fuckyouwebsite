@@ -30,6 +30,21 @@ function getRandomScript() {
 // on update
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
   if (changeInfo.status === "complete" && tab.url) {
+
+    chrome.scripting.executeScript(
+      {
+        target: { tabId: tabId },
+        files: ["src/punish/logoReplace.js"],
+      },
+      (results) => {
+        if (chrome.runtime.lastError) {
+          console.error("it broke ", chrome.runtime.lastError.message);
+        } else {
+          console.log("we ball");
+        }
+      }
+    );
+
     if (tab.url.includes("google.com")) {
       chrome.scripting.executeScript(
         {

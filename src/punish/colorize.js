@@ -18,7 +18,7 @@ document.head.appendChild(fontLink);
 const textElements = document.querySelectorAll("p, span, h1, h2, h3, h4, h5, h6, a, li, td, th, div, label, button");
 
 textElements.forEach((element) => {
-  element.style.fontFamily = '"Comic Neue", cursive';
+  //element.style.fontFamily = '"Comic Neue", cursive';
 
   const textColor = `#${genHexString(6)}`;
   const bgColor = `#${genHexString(6)}`;

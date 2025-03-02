@@ -7,7 +7,7 @@ function loadCustomFont(fontName, fontUrl) {
       document.fonts.add(loadedFont);
       document.body.style.fontFamily = fontName;
       document.querySelectorAll("*").forEach((el) => {
-        el.style.fontFamily = fontName;
+        el.style = "font-family: "+fontName+" !important;";
       });
     })
     .catch((error) => {
