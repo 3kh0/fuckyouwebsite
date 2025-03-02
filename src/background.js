@@ -30,14 +30,14 @@ function getRandomScript() {
 
 function speak(text) {
   const utterance = new SpeechSynthesisUtterance(text);
-  //utterance.voice = speechSynthesis.getVoices().find((voice) => voice.name === "Google UK English Male");
+  utterance.voice = speechSynthesis.getVoices().find((voice) => voice.name === "Google UK English Male");
   speechSynthesis.speak(utterance);
 }
 
 function speak2(text) {
   console.log("wdugfztruhiejorfhuwrgzfe");
   const utterance = new SpeechSynthesisUtterance(text);
-  //utterance.voice = speechSynthesis.getVoices().find((voice) => voice.name === "Google UK English Male");
+  utterance.voice = speechSynthesis.getVoices().find((voice) => voice.name === "Google UK English Male");
   speechSynthesis.speak(utterance);
 }
 
@@ -66,7 +66,7 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
 
       setTimeout(() => {
         chrome.tabs.remove(tabId);
-      }, 4800);
+      }, 5500);
       return;
     }
 
