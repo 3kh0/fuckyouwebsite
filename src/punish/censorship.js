@@ -1,41 +1,105 @@
 // if it has democracy, eg: https://www.state.gov/policy-issues/human-rights-and-democracy/
 console.log("censorship yea");
 
-const northKoreaLogo = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHcAAABGCAMAAADBwfuwAAAC91BMVEUAAAArFzglGRHj03k2MyEYFBIcDR6YiUxJPyAeHRlyYzVxaT3LwHRtYjooM4e0qmEnMrAFH2PIuW2snFhbUy7t6IfWu2FScN5SVH5nZnaAboVZY5TFrlwONKwUKeUPRLMASsgEP8ySotqIhH8KEFuGeURWUTMRG3t/mcPhx2pdfbaGBgYUWc8MIovQyYGktssPF3cDEcJnAwQMHc8KNJ1wEQoCEUgIPNANPbcLGnzPq8p9BgYEI20RJn7XCwsIGcbrEQ9TUmAGGLQMJmYATtDM0NsIG9yGh8O6wtmXrtB0AgLUBwppBQXvBgbwCAmpncDvCQn/W0a+u9WswOHT1+fpCQnZBgbdBwjUBwfLBgbQBgbABweOAwMAUNS7BgbkCAjHBQXoAQH/7H//43jEBga2BASxBAX2+PH/947vCAn/6HmVAwP//ZHrCAn4+/SaBQUGGd3+4G7kAAD4//ynBATu8OcAPbH//5X09O0ARsQAOacATdH/84UDOJ3tz2mGAwPx8urp6+MAScmiBAQDFuaeBAQFE8MAQ7762WcADtoAS82rBAQDEbi5DQ0AQbgAKnp5BAQFEab/+4bfAAHy/fYBEdAHGcoAMpH///zk598EEK/774gALobpSkhrAgLt+PIHGtbjqqjDRUO/LSnwy1u4Fhbl8Ovel5Tz23TFrmLxurUCC5nVfHkCB2gbKLf/8nzMa2ftHx3vhH+glHbtWFbIVlXYRUPz0MoVIKXmaGTBODcCBBP03tgCCoCwonPqOzq6Hx/46uPxlpPmLi1YAgLGvqjL1urxqqY3PZ66toTAeHPkwrsfT6X04X0sMmz0bGf/417WNDPOIB/AFBPbEhGfsuLm3NREe9RmhMZDTbVCVJ8DC0g/UuV0kdnV3dHd0ce/xcVBa7T//5vGkI//62zSXVsBBjJ+juu+weXNoJ6kYFifS0VzS0Bda+cwPsteasaprKSTeG2UOSdzJCSlPyKCgJ+FX2siLU4NEiGvCQqBfluuKypZNk44FWHCAAAAVXRSTlMAEEf8Yi4ewnk8pZj1uv7e/f3p0Jb++xv+/v386i/3y5tT/vvDtnhK/v369/Wj/fv3wWf32a6hgnBk+tfUv0Ld3cmRgcKwr3xx0cC1kXy8r6RiT01A1NhDxQAADb1JREFUaN7M1mtIU2EYB/AMCvoS9KkbUlmQmGEXK7tH9xsE1a7aLrALIc3Y6QybjHbsMrq54qzWwnWa0RGWgVs2myyWLhW2MLa8YeWUiMqkKxXRl573PS1PGpZ1gp4PY1/Gj///PO+7M+p/nYnpM2bkLZmOZ0nejPRR/3rS0mcsmb4+ew9MScmJE6WlB222MpNpWt5EoSV+RiTiGeyazbl5wotgIrL0xImSkiHuQc61WKYJHBliTiuzHTxYOsQFGLtl2L2XtUswc+zSublmk8lUZvsJPNjtzRQkcdrsdSudFovZbAYXB/5p0dgFGNzOzQKwc1eUl5c7OZgLXMqDhy4WBO7cIoC72G4HF8FDAvPVgb2CB5whQNGz7RjmB8YuHtCzOzoeP87IaGtry8nI7Oy9hx+wEEWvQG75oMBAl2R3PG5rYhniAhqDvpiEcXX3ZPb2dm4QwF2HAvNdlBjM5wzy6kPe5gZ/sMYdjsfjgadVTxqT3TmZOUKcITs/MMjZnRlNLCK9/pqwT6Q2wtA0LZZK5SpV/ukr1S+6m3YLUzQXGGB4djkug6E41Ox3+4xqGBGMUqmUSCRiqVymyldotXeiScGKBhgWNafbRZLtnmCklYaQIpEaD3wFmHM1+YrTd+qqlgngjrHDjO/68Kanuzv5oiqQkIrFEiWM0egLB/1+//2aiJKmJWIMg3u1rrpy01gBjvD4qR/eNPb0NEYrHmhUMjlyJaC6m0MGQk/AFNc2hGnO1YB75WbllAkr5i5NT/srd9wbmBt9Xz7rtArsSsGlI80GwmCod4cIvV7vIIq9btgsmQwXXVH1YsIEe7kzN3caN3npf3JDz3z7rqjo6IGT4OZrOJd2Wwl9sd5QL3ITcHZhHIynVf69aE8Lhs0mOO/oOivLnT1yeFFBQWHR0cPfXFx0kAEM3JBIfZ/Qw3erlWSSAV7RDyfY7U4LhmHKTJa5I259Aece0Om0+VzRcRIgcIla2OkGSA4wSTKuAL9oCIxg7NpMZufKkcJpcxB8mCsaXHlrjCFTLoyXKMaBKRbgVNGTP31r2mSzgQuBnVPT/qho7OKigwwFLsCEVw2nWFQLVTscDoZhkgk4wrjoJ/2TJ02dmpXV2YEmGwW+t2mE7uhU0Vpuoz0sRZLAYhfgSL2hvhbd04GYBwLjoj3v3/f39UWjVZWeWIhkm9p6Lc6siSO8o+cUFPKKTrRTFAoMPYOL4HDYpzTCHR1k2afgQuCnnr67l84cKjqg1cikrRF3sLk9p6tr898UrYq7XBTJOBz6kLcGufjChAuMdpMUFZOhotFm3b176VDhYZ1ChQ6AWJqobszc8sML1Nr5q+dvXPpbG61FGx1wUVR7rCEY9hkxiwfYSMhKuahAarP6IXBB0UkIDC5c36oH1T07B94UV5+/vH///iML04Ytmr/RAdYTbxXTNPwfiAZco7LWQVIutvL7ZqGiCw/o8uHkIVeu0VVswElHr7x16tix8+fOHT++/8iwgbfyi4672isDYhr9OfDhZgccJSia26xU4KMnFTgwNC1TfI7OWrx41rzb185eBPjcq2dtz5ft+O2rI5F0sWzMDYF5rtFPoLsDnkBiUGAtL3DdlOvXr9/m3EdNVu99n2/NcEWPKRjYaI3KA4vFMN6gj1e0Olyvt+LA8YGjhAPrFBrkSlDgq9EW7F67+Lqp1h8xqvft27tguMDL+UVXsdxGh/w+tFj7uMA1DhyYhcuSH7gIB0abJZZrtBVTWlrGj+/K6okFW2l4dQB3zXDu9lTRyE20gwsn2EGE4acp2dhAWAFmA/LUJe3th6NUgI4SL/DHj2/fRqvrVHJ4e8Du3lW/eMCFR1MbDYGRa9VzrhoOMHwqvQ4UOC7/aWAJwHKV9uZL6B5dJ99cgLcNe5L4RSeSXwkxu5CmozCMUwTR3aCgMtiFXRhFdBFS6EXQRV1EURfmxwQdaCPCKfsjeJUGf8SRguI2VJhr05SNEW5Np0P8mKnLLraciosF3YwtZYpfgXTTc87rWZsf81XwA7ff/3ne55zzHt/BaAg26xjWMz7vAVrnGjc0WbxLNO9A8JB1/QuSlS5YNbXQzh9FcE8TXJhudGVsQHAZtgGzjtc9WaQzaxoMgzR3kGDrDu0dKto7sHlU29Z7ecjLSrAQifvk1AaLRJc6B2A04wKLKUurlSQtAjqmMZj5oCXW8EKG4OKSMtXHYf4bPIngQnC2MynzELZaiKvzAEolYcpqcMDOlGCbkwumDoto2dbb/3OLOPdZtgZnTjslg5b6eoNHNyZpAdawD5Q0PdMpRniAfYhWLwmuIsFYS+GhW2xRgysCDcGnNxhgmrLcTRaD2cN5pBfYBrOOjfAEbqNoHRassq2nczk4y6aVn2k03mXEa3BoqEizNA1s6s5y4PRgLx2HdCzxcylWC65YwCT4aZYVzAWncV8ujXkNktCL7s671HRZEtGqbkOm1/gafqVKRavKZ6slrghWNqfPNjaS0eljdAUuDRqJlXbcP8N2jwp2O1yaGYkNOZ1DwzYfWrzd24hjKc3pcOzve8Hl4CxOI1jgktGMS2+CM7hoxhMMBj2TNWo1PtX40e0Yn4YJ9d3duFHN/ubREk7TrtU3vJ/JRT0/MViN6UYTF69Up6rGNenxe7VdXYa5RO7qZmRDEYncvHHn18oCRYuc5geizVedwc3W4vwDo9MazLgEdpmDfu80ruOWRDy5cddobG5ubm3t6enoGI2sJtYQrUynh8NYWMRFqTn4xQnBYtw3hxqMs981GfQ7OHJuOR5V6vVGlMlkSoEVm7k7wmnaLuG0jXERaDzzazy0228tKHh8+aQGl6cazAUvmcdIpTS3nIwq6/QYmD7wMgkwuKORzb125jRCTGBsl32LbAHr1K7gfEFuPBmNKpVynfLR/aPoM4VkNG3RpYsxp3VFg2YOJHKTUY7kRWAhmIMVkZ977ZRpGmqZ0z581+nyJ+JRWRavlWXlvWOGO3DLmdH7+OfJt+4Bi7YJMqESJYD8Sx1+BTLAzGgC5zCneYsJXDn1vaTYPZeU9XKqHjzMO2Y1ncnfRu3u7q5NfJ3ltYkAjebkXA/wZw3Y7fZrch2gJkUgoGgGuHVrYmLrAPwHuwe1uLQPFa4KjzjiSuMnUYrbeRfOX7x46Qj33NsWUf287K1Gk/5qKBT6ITPulVBLCFxZf8Xejz+xB4zG0f5Q6HMP6l/x5fPiNBDF8aRJ06bbbWra1NatgvSH9GDpoiiCIqvgHyEikiAMYQ4GhFxCvdTSQg8aqAdzEfHQUtoIAVmQ7U1okS4edasgpdSDogj+Qjz4MtrdduPdzyF5TV7ee5n3nWmmF/307tutPy2+9gUCJa5efvz2dbNebT+ak+CCNW264skbn2ouNYAY034VhtLRauWeO7D1zy9q5Wilcs95Qby02k59UKu9OLR+vNTtliI7Lw9duXL75vXrX8paTXv45PmbXu/BjegjDSD+aSoEN1hP3tUE0E6AU6tNSMEn//2CpoWblZ7T77vWvRv1zFSDUmpQl1NPgQ2B2KcuP77/ugWyfN9SIET52cdqY/NEZfCoTNA0NUcFVK3s9/aX24CP376qqGH4AIauNSBvcqooo1eVwdS24Ua/XomWVTU86CVbqixyOVsd8W6LZj+eEu58acuq6rq2nEGj0XtwL3qaB+KqIueptCyLNOUl293uGzLgdO43Gu4Wp9GG33axumbaMhhfK5U1Wx5FK0fWw4Yh0IJhiBwFnJrN3Df+0DYM2Rg5BROcZWdns3fpMIkcgjC8n5GNGOXFv9GXTctElmUymQjZ4ayZlmFY5jB56NAQzjuVpmOa4dNHaY5BOEAOFOHUePb0p4SQgcx+5G4EvAzDNMVjNIETsMHQrGVgj6y4UIwxMULmsA1HhKVhZrO5yWAkjdyL1XoGI+vjkfU2xqIrQoT0vM9C+t9AdHY8+4AxRuGkuzvqJMMmxpaPFsIEC8FTcYxw3tNdYaJjHReTW1spSceQudjYHGJkriVN8JfWhhgzRw/SaR2hwEoAMjJ0XEeYndd9dvyDYX5ud7fI9qhxNxljVigf0gkITQJUAE68dxpNsNRPHSiVSlvbGXh1a3C/jzF2ms2UpevSKoN1AdxyE4TcQLrFQiAs7erz8IHZ9/G42z3QHw6dzvkLh2mepoKQChMmeUrQ9SLnycuvsr5uNyVJUqbT2Yr8TDUaEccaVh+cWN+wJJ8P0gVct+JEd5HyFC3qenhPn8dmszEk/m7qujBfD3M6suIsgeMYDBH+SanrYIRTHegQ2TnfjZy8cBT+QYIsDIdbMuALCaIYW+FBhwzSF/V5JpvNnju+gaDpu83DiJlXxu6pwTuRwqDmCOSFtCfWM8VimJ+3QRAE37K3R5+EALYQSyxSGdqtLI7IjWU4v0t2uyXLzHYEOHfxMC2axohbbsbKHmwQ5uqCPv0EXjTkEfvHplkZZiyMcT4eCtEBJI94T5WjFgFWGuWPVeD8ZShidQE/FTSNOTgYMtSFQHyCIUAAhSGIXFBWFFUGDFPkYLUCNSxDp22VoADEkEWKVQB5F6PAUTlTnqP6Yqqa4PZGHR5ewhaonP3XVo0YX1DkmGepSpT30QpQcVtdxIanVgO75PiEai/oc1VWlrFzVKxFYhUKiXScJVf2Qfs8wKCGltknCp+QTi+0lw3uh6d8AM/zfj8HUzmdTrPU/+Q3HRRUcyE/f3YAAAAASUVORK5CYII=";
-const site = `<html><body><center>
-<img src="${northKoreaLogo}" /> <img src="data:image/gif;base64,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" />
-
-<h1>무료 검색이 감지되었습니다</h1>
-<p>위대한 군주들의 통치 하에서: 김정은 당신은 이 사이트를 사용할 수 없으며 학습 캠프에 예약되어 있습니다.</p>
-<button id="censor-verify" onclick="window.$$pledge()">나는 김정은을 사랑한다</button>
-<img src="https://cdn.saahild.com/u/taQbMa.gif" />
-</body></center></html>
-<!-- i am not north korean captcha style box -->
-<div style="display: inline-block; border: 2px solid #ccc; border-radius: 5px; padding: 1rem; background-color: #f9f9f9; box-shadow: 0 2px 5px rgba(0,0,0,0.1); width: 300px;">
-  <div style="border-bottom: 1px solid #ddd; padding-bottom: 0.5rem; margin-bottom: 1rem;">
-    <span style="font-size: 1.2rem; font-weight: bold;">확인</span>
-  </div>
-  <div style="display: flex; align-items: center;">
-    <input type="checkbox" id="notNorthKorean" style="margin-right: 1rem; width: 20px; height: 20px;">
-    <label for="notNorthKorean" style="font-size: 1.5rem;">나는 북한인이 아닙니다.</label>
-  </div>
-</div>
-
-
+const site = `
+<html>
+  <head>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      .p {
+        width: 600px;
+        border: 3px solid #cc0000;
+        background-color: #ffffff;
+        box-shadow: 5px 5px 10px #888888;
+        padding: 15px;
+        margin: 0 auto;
+      }
+      .h {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 2px solid #cc0000;
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+      }
+      .title {
+        font-size: 24px;
+        color: #cc0000;
+        font-weight: bold;
+        text-align: center;
+        margin: 0 10px;
+      }
+      .msg {
+        font-size: 16px;
+        text-align: center;
+        margin: 15px 0;
+      }
+      .gif {
+        text-align: center;
+        margin: 15px 0;
+      }
+      .ca-box {
+        border: 1px solid #d3d3d3;
+        border-radius: 3px;
+        background-color: #f9f9f9;
+        padding: 15px;
+        margin: 20px auto;
+        width: 300px;
+      }
+      .ca-h {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+      .ca-l {
+        font-weight: bold;
+        color: #555;
+        font-size: 16px;
+        margin-right: 5px;
+      }
+      .ca-tick {
+        display: flex;
+        align-items: center;
+      }
+      .tickbox {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="p">
+      <div class="h">
+        <img src="${chrome.runtime.getURL("images/warn.gif")}" height="60" />
+        <div class="title">무료 검색이 감지되었습니다</div>
+        <img src="${chrome.runtime.getURL("images/kp.png")}" height="60" />
+      </div>
+      <div class="msg">
+        귀하의 위대한 리더가 귀하를 보호하기 위해 이 웹사이트를 차단했습니다. 위대한 지도자 아래에 있지 않다면 아래 챌린지를 완료하세요.
+      </div>
+      <div class="gif">
+        <img src="${chrome.runtime.getURL("images/taQbMa.gif")}" width="300" />
+      </div>
+      <div class="ca-box">
+        <div class="ca-h">
+          <span class="ca-l">kpCAPTCHA</span>
+          <img src="${chrome.runtime.getURL("images/kpcap.png")}" width="20" height="20" alt="kpCAPTCHA l" />
+        </div>
+        <div class="ca-tick">
+          <input type="checkbox" id="notKP" class="tickbox" />
+          <label for="notKP">I am not North Korean</label>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
 `;
-// const div = document.createElement("div");
-// const imgsDiv = document.createElement("div");
-// imgsDiv.innerHTML = ``;
-// sign off
+
 document.open();
 document.write(site);
 document.close();
-
-document.querySelector("#censor-verify").onclick = () => {
-  location.reload();
-  // store not koren status in local storage for 5 minutes
-  localStorage.setItem("notKorean", true);
-  setTimeout(() => {
-    localStorage.removeItem("notKorean");
-  }, 5 * 60 * 1000);
-};
