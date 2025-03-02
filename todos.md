@@ -3,3 +3,4 @@
 - Fix we need money popup
 - Add Payment
 - Fix error when loading Google.com
+- North korea not going away after clicking on captcha

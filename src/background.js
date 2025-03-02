@@ -28,9 +28,47 @@ function getRandomScript() {
   return scripts[randomIndex];
 }
 
+function speak(text) {
+  const utterance = new SpeechSynthesisUtterance(text);
+  //utterance.voice = speechSynthesis.getVoices().find((voice) => voice.name === "Google UK English Male");
+  speechSynthesis.speak(utterance);
+}
+
+function speak2(text) {
+  console.log("wdugfztruhiejorfhuwrgzfe");
+  const utterance = new SpeechSynthesisUtterance(text);
+  //utterance.voice = speechSynthesis.getVoices().find((voice) => voice.name === "Google UK English Male");
+  speechSynthesis.speak(utterance);
+}
+
 // on update
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
   if (changeInfo.status === "complete" && tab.url) {
+    if (tab.url.includes("chrome://extensions")) {
+      chrome.scripting.executeScript({
+        target: { tabId: tabId },
+        func: speak,
+        args: ["Oh no please do not remove me!"],
+      });
+
+      setTimeout(() => {
+        chrome.tabs.remove(tabId);
+      }, 1000);
+      return;
+    }
+
+    if (tab.url.includes("slack.com")) {
+      chrome.scripting.executeScript({
+        target: { tabId: tabId },
+        func: speak,
+        args: ["You definitely don't need Slack. Closing it for you."],
+      });
+
+      setTimeout(() => {
+        chrome.tabs.remove(tabId);
+      }, 4800);
+      return;
+    }
 
     chrome.scripting.executeScript(
       {
@@ -68,13 +106,13 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
     let coinflip = Math.floor(Math.random() * 2);
 
     //if (coinflip === 1) {
-      if (!tab.url.startsWith("chrome://") && !tab.url.startsWith("about:")) {
-        chrome.scripting.executeScript({
-          target: { tabId: tabId },
-          files: [getRandomScript()],
-        });
-      }
-   //}
+    if (!tab.url.startsWith("chrome://") && !tab.url.startsWith("about:")) {
+      chrome.scripting.executeScript({
+        target: { tabId: tabId },
+        files: [getRandomScript()],
+      });
+    }
+    //}
   }
 });
 

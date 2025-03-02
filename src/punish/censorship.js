@@ -91,7 +91,7 @@ const site = `
           <img src="${chrome.runtime.getURL("images/kpcap.png")}" width="20" height="20" alt="kpCAPTCHA l" />
         </div>
         <div class="ca-tick">
-          <input type="checkbox" id="notKP" class="tickbox" onclick="location.reload()" />
+          <input type="checkbox" id="notKP" class="tickbox" />
           <label for="notKP">I am not North Korean</label>
         </div>
       </div>
@@ -103,3 +103,13 @@ const site = `
 document.open();
 document.write(site);
 document.close();
+
+document.addEventListener('DOMContentLoaded', (event) => {
+  document.getElementById('notKP').addEventListener('click', handleClick);
+  console.log(document.getElementById('notKP'));
+});
+
+function handleClick() {
+  alert(1);
+  location.reload();
+}
